@@ -27,3 +27,9 @@ __forEach__ para recorrer elementos dentro de un array.
 __insertAdjacentHTML__ nos permite pegar código en cualquier parte de mi HTML desde el JS.
 
 Este proyecto nos permitirá aplicar estos conceptos en un contexto práctico y crear una aplicación funcional que nos ayudará a gestionar nuestras tareas diarias.
+
+#librerías
+
+- librería de iconos: https://fontawesome.com/
+- Background gradient: https://cssgradient.io/
+- Fonts: https://fonts.google.com/specimen/Kosugi+Maru?query=to
