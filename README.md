@@ -33,3 +33,15 @@ Este proyecto nos permitirá aplicar estos conceptos en un contexto práctico y 
 - librería de iconos: https://fontawesome.com/
 - Background gradient: https://cssgradient.io/
 - Fonts: https://fonts.google.com/specimen/Kosugi+Maru?query=to
+
+### insertAdjacentHTML 
+Es un método de JavaScript que permite agregar contenido HTML a un elemento del documento HTML en una posición específica. Tiene cuatro opciones de posición para agregar contenido: "beforebegin", "afterbegin", "beforeend" y "afterend".
+
+beforebegin: Inserta el contenido HTML justo antes del elemento en sí.
+afterbegin: Inserta el contenido HTML como el primer hijo del elemento.
+beforeend: Inserta el contenido HTML como el último hijo del elemento.
+afterend: Inserta el contenido HTML justo después del elemento en sí.
+
+ la función agregarTarea utiliza insertAdjacentHTML con la posición "beforeend" para agregar contenido HTML al final del elemento con el id "lista".
+
+ 
