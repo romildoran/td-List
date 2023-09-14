@@ -44,4 +44,10 @@ afterend: Inserta el contenido HTML justo después del elemento en sí.
 
  la función agregarTarea utiliza insertAdjacentHTML con la posición "beforeend" para agregar contenido HTML al final del elemento con el id "lista".
 
- 
+ ## El método toggle 
+ El método toggle en JavaScript se utiliza para alternar (activar o desactivar) una clase CSS en un elemento HTML. Puede tomar una clase como argumento y la agrega al elemento si no está presente, o la elimina si ya está presente.
+ El método toggle es útil para crear interacciones basadas en clics u otros eventos donde deseas cambiar la apariencia o el comportamiento de un elemento al hacer clic en él, alternando entre diferentes estados.
+
+
+
+
