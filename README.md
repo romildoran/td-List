@@ -48,6 +48,17 @@ afterend: Inserta el contenido HTML justo después del elemento en sí.
  El método toggle en JavaScript se utiliza para alternar (activar o desactivar) una clase CSS en un elemento HTML. Puede tomar una clase como argumento y la agrega al elemento si no está presente, o la elimina si ya está presente.
  El método toggle es útil para crear interacciones basadas en clics u otros eventos donde deseas cambiar la apariencia o el comportamiento de un elemento al hacer clic en él, alternando entre diferentes estados.
 
+## El comando target
+El comando target en JavaScript se usa en eventos para referirse al elemento HTML en el que ocurrió ese evento. Proporciona acceso al elemento específico que desencadenó el evento. Puedes usar event.target para interactuar o manipular ese elemento en respuesta al evento. Por ejemplo, puedes cambiar su contenido, estilo o realizar otras acciones basadas en la interacción del usuario con ese elemento específico. Es una forma clave de trabajar con eventos para crear comportamientos dinámicos en una página web.
+
+## La propiedad classList
+Claro, te lo explico de manera sencilla. La propiedad classList en JavaScript se usa para trabajar con las clases CSS de un elemento HTML. Te permite agregar, eliminar o verificar si una clase está presente en el elemento.
+
+### element.parentNode.querySelector(".text"): 
+Aquí estamos accediendo al "padre" del elemento. Piensa en esto como si estuviéramos subiendo un nivel en la jerarquía de tu página web para encontrar algo relacionado con la tarea. Luego, estamos buscando algo con la clase "text" dentro de ese padre.
+
+### classList.toggle(lineThrough): 
+Esta línea agrega o quita la clase lineThrough a ese elemento encontrado en el paso anterior. lineThrough cambia la apariencia de la tarea para mostrar que está tachada, como cuando marcas una tarea como completada en papel.
 
 
 

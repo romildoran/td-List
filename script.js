@@ -5,7 +5,7 @@ const botonEnter = document.querySelector("#boton-enter");
 const check = "fa-check-circle";
 const uncheck = "fa-circle";
 const lineThrough = "line-through";
-const id = 0;
+let id = 0;
 
 // funcion para agregar tarea
 
@@ -28,6 +28,13 @@ function agregarTarea(tarea, id, realizado, eliminado) {
     lista.insertAdjacentHTML("beforeend", elemento);
 }
 
+//funcion tarea realizada
+function tareaRealizada(element) {
+    element.classList.toggle(check); // Agrega o quita la clase 'check'
+    element.classList.toggle(uncheck); // Agrega o quita la clase 'uncheck'
+    element.parentNode.querySelector(".text").classList.toggle(lineThrough);
+}
+
 botonEnter.addEventListener("click", () => {
     const tarea = input.value;
     if (tarea) {
@@ -46,5 +53,15 @@ document.addEventListener("keyup", function (event) {
         }
         input.value = "";
         id++;
+    }
+});
+
+lista.addEventListener("click", function(event){
+    const element = event.target;
+    const elementData = element.attributes.data.value;
+    if(elementData === "realizado") {
+        tareaRealizada(element);
+    }else if (elementData === "eliminado"){
+        tareaEliminada(element);
     }
 });
