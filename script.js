@@ -5,23 +5,23 @@ const botonEnter = document.querySelector("#boton-enter");
 const check = "fa-check-circle";
 const uncheck = "fa-circle";
 const lineThrough = "line-through";
-let id = 0;
-const LIST= [];
+let id;
+let LIST;
 
 //creacion de fecha
 const FECHA = new Date();
-fecha.innerHTML = FECHA.toLocaleDateString("es-Mx", {weekday:"long", month:"short", day:"numeric"});
+fecha.innerHTML = FECHA.toLocaleDateString("es-Mx", { weekday: "long", month: "short", day: "numeric" });
 
 // funcion para agregar tarea
 
 function agregarTarea(tarea, id, realizado, eliminado) {
 
-    if(eliminado){
+    if (eliminado) {
         return;
     }
 
-    const REALIZADO = realizado ?check :uncheck;
-    const LINE = realizado ?lineThrough :"";
+    const REALIZADO = realizado ? check : uncheck;
+    const LINE = realizado ? lineThrough : "";
     const elemento =
         `
             <li id= "elemento">
@@ -38,7 +38,7 @@ function tareaRealizada(element) {
     element.classList.toggle(check); // Agrega o quita la clase 'check'
     element.classList.toggle(uncheck); // Agrega o quita la clase 'uncheck'
     element.parentNode.querySelector(".text").classList.toggle(lineThrough);
-    LIST[element.id].realizado = LIST[element.id].realizado ?false :true;
+    LIST[element.id].realizado = LIST[element.id].realizado ? false : true;
 }
 
 //funcion de tarea eliminada
@@ -58,6 +58,7 @@ botonEnter.addEventListener("click", () => {
             eliminado: false
         });
     }
+    localStorage.setItem("TODO", JSON.stringify(LIST));
     input.value = "";
     id++;
 });
@@ -75,17 +76,36 @@ document.addEventListener("keyup", function (event) {
                 eliminado: false
             });
         }
+        localStorage.setItem("TODO", JSON.stringify(LIST));
         input.value = "";
         id++;
     }
 });
 
-lista.addEventListener("click", function(event){
+lista.addEventListener("click", function (event) {
     const element = event.target;
     const elementData = element.attributes.data.value;
-    if(elementData === "realizado") {
+    if (elementData === "realizado") {
         tareaRealizada(element);
-    }else if (elementData === "eliminado"){
+    } else if (elementData === "eliminado") {
         tareaEliminada(element);
     }
+    localStorage.setItem("TODO", JSON.stringify(LIST));
 });
+
+//localstorage get item
+let data = localStorage.getItem("TODO");
+if (data) {
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    cargarLista(LIST);
+} else {
+    LIST = [];
+    id = 0;
+}
+
+function cargarLista(DATA) {
+    DATA.forEach(function (i) {
+        agregarTarea(i.nombre, i.id, i.realizado, i.eliminado);
+    });
+}

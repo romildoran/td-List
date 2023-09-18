@@ -60,5 +60,39 @@ Aquí estamos accediendo al "padre" del elemento. Piensa en esto como si estuvi�
 ### classList.toggle(lineThrough): 
 Esta línea agrega o quita la clase lineThrough a ese elemento encontrado en el paso anterior. lineThrough cambia la apariencia de la tarea para mostrar que está tachada, como cuando marcas una tarea como completada en papel.
 
+##  localStorage y el sessionStorage
+El localStorage y el sessionStorage son dos características proporcionadas por los navegadores web que permiten a las aplicaciones web almacenar datos en el lado del cliente (en el navegador) de manera persistente o temporal, respectivamente. Aquí tienes una breve descripción de cada uno:
 
+### localStorage:
+- Persistencia: Los datos almacenados en localStorage se mantienen incluso después de cerrar el navegador y reiniciar la computadora. Son persistentes.
+- Capacidad: Ofrece una capacidad de almacenamiento mayor en comparación con sessionStorage, generalmente alrededor de 5-10 MB por dominio.
+- Uso Común: Se utiliza para almacenar configuraciones de usuario, preferencias, datos de autenticación, y otros datos que deben mantenerse a largo plazo.
+
+### sessionStorage:
+- Temporalidad: Los datos almacenados en sessionStorage solo están disponibles durante la duración de una sesión de navegación. Se borran automáticamente cuando se cierra la pestaña o el navegador.
+- Capacidad: Ofrece una capacidad de almacenamiento más limitada en comparación con localStorage, generalmente alrededor de 5-10 MB por dominio.
+- Uso Común: Se usa para almacenar temporalmente datos que solo son relevantes para la sesión actual del usuario, como detalles de un carrito de compras en línea o el estado temporal de una aplicación web.
+#### Ejemplos:
+- Almacenar datos en localStorage
+<script>
+    localStorage.setItem('nombre', 'Juan');
+    localStorage.setItem('puntos', 100);
+</script>
+- Recuperar datos de localStorage
+<script>
+    const nombre = localStorage.getItem('nombre');
+    const puntos = localStorage.getItem('puntos');
+</script>
+
+estas funciones se usan para almacenar y recuperar datos relacionados con las tareas pendientes que el usuario ingrese en la lista de tareas.
+
+1. `localStorage.setItem("TODO", JSON.stringify(LIST));`: Almacena un objeto llamado "TODO" en el almacenamiento local del navegador, convirtiendo la lista "LIST" en una cadena JSON.
+
+2. `JSON.parse(...)`: Convierte una cadena JSON en un objeto JavaScript.
+
+3. `localStorage.getItem("TODO");`: Recupera el objeto "TODO" del almacenamiento local del navegador.
+
+## forEach
+forEach es un método que se utiliza para recorrer los elementos de un array y ejecutar una función proporcionada una vez por cada elemento. Es una forma conveniente de realizar una acción en cada elemento de una lista sin necesidad de escribir bucles for o while.
+aqui se utiliza forEach para recorrer LIST y, para cada tarea, la almacena en localStorage con una clave única basada en el índice.
 
