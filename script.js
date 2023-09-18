@@ -6,6 +6,7 @@ const check = "fa-check-circle";
 const uncheck = "fa-circle";
 const lineThrough = "line-through";
 let id = 0;
+const LIST= [];
 
 // funcion para agregar tarea
 
@@ -35,10 +36,21 @@ function tareaRealizada(element) {
     element.parentNode.querySelector(".text").classList.toggle(lineThrough);
 }
 
+//funcion de tarea eliminada
+function tareaEliminada(element) {
+    element.parentNode.parentNode.removeChild(element.parentNode);
+}
+
 botonEnter.addEventListener("click", () => {
     const tarea = input.value;
     if (tarea) {
         agregarTarea(tarea, id, false, false);
+        LIST.push({
+            nombre: tarea,
+            id: id,
+            realizado: false,
+            eliminado: false
+        });
     }
     input.value = "";
     id++;
@@ -50,6 +62,12 @@ document.addEventListener("keyup", function (event) {
         const tarea = input.value;
         if (tarea) {
             agregarTarea(tarea, id, false, false)
+            LIST.push({
+                nombre: tarea,
+                id: id,
+                realizado: false,
+                eliminado: false
+            });
         }
         input.value = "";
         id++;
