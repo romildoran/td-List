@@ -34,11 +34,13 @@ function tareaRealizada(element) {
     element.classList.toggle(check); // Agrega o quita la clase 'check'
     element.classList.toggle(uncheck); // Agrega o quita la clase 'uncheck'
     element.parentNode.querySelector(".text").classList.toggle(lineThrough);
+    LIST[element.id].realizado = LIST[element.id].realizado ?false :true;
 }
 
 //funcion de tarea eliminada
 function tareaEliminada(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
+    LIST[element.id].eliminado = true;
 }
 
 botonEnter.addEventListener("click", () => {
