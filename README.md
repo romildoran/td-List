@@ -11,6 +11,48 @@ El objetivo principal de este proyecto es poner en práctica los siguientes conc
 6. Uso de condicionales __if__ para definir condiciones y operadores ternarios (__?:__).
 7. Uso del __localStorage__ del navegador para guardar información y poderla usar para almacenar nuestras tareas (uso del __SetItem__ y __GetItem__, formato __JSON__, __Parse__ y __Stringify__).
 8. Uso de __return__.
+
+# presentacion del codigo
+
+Claro, puedo explicar el código proporcionado como una presentación estudiantil. Aquí tienes una descripción de las principales partes y funcionalidades del código:
+
+**1. Configuración Inicial:**
+   - Seleccionamos elementos del DOM utilizando `document.querySelector` y los almacenamos en variables para su posterior uso, como `fecha`, `lista`, `input`, `botonEnter`, entre otros.
+
+**2. Variables y Constantes:**
+   - `check`, `uncheck`, y `lineThrough` almacenan nombres de clases CSS que se utilizan en el código.
+   - `id` es una variable para llevar un seguimiento del identificador único de cada tarea.
+   - `LIST` es una matriz que almacenará las tareas.
+
+**3. Creación de Fecha:**
+   - Se obtiene la fecha actual y se muestra en el formato "día de la semana, mes día" en el elemento con el id `fecha`.
+
+**4. Función para Agregar Tarea:**
+   - La función `agregarTarea` toma como argumentos `tarea`, `id`, `realizado` y `eliminado`.
+   - Crea un elemento de lista `<li>` con iconos de verificación, texto de tarea y un ícono de eliminación.
+   - Aplica clases CSS según el estado de la tarea (realizada o no) y si ha sido eliminada.
+   - Agrega el elemento de lista al elemento `<ul>` con el id `lista`.
+
+**5. Función para Marcar Tarea como Realizada:**
+   - `tareaRealizada` se llama cuando se hace clic en el ícono de verificación.
+   - Cambia el estado de realización de la tarea y actualiza las clases CSS en consecuencia.
+
+**6. Función para Eliminar Tarea:**
+   - `tareaEliminada` elimina una tarea de la lista y la marca como eliminada en la matriz `LIST`.
+
+**7. Event Listeners:**
+   - Se agregan controladores de eventos para el botón "Agregar" (`botonEnter`), la tecla "Enter" (evento `keyup`), y los clics en la lista (`lista`).
+
+**8. Almacenamiento Local (LocalStorage):**
+   - Las tareas se almacenan y recuperan del almacenamiento local (`localStorage`) para que los datos persistan incluso después de cerrar la página.
+   - Se verifica si ya existen tareas en el almacenamiento local (`localStorage.getItem("TODO")`) y se cargan en `LIST`.
+
+**9. Función para Cargar Lista:**
+   - `cargarLista` recibe una matriz de tareas y las agrega a la lista utilizando la función `agregarTarea`.
+
+En resumen, este código permite al usuario agregar, marcar como realizadas y eliminar tareas de una lista de quehaceres. Los datos de las tareas se almacenan en el almacenamiento local para mantener un registro persistente de las tareas. La interfaz de usuario refleja el estado de las tareas (realizadas o no) y su eliminación.
+
+# algunos conceptos puntuales que se manejan en este codigo:
    
 ## Métodos y Propiedades.
 
