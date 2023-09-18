@@ -8,6 +8,10 @@ const lineThrough = "line-through";
 let id = 0;
 const LIST= [];
 
+//creacion de fecha
+const FECHA = new Date();
+fecha.innerHTML = FECHA.toLocaleDateString("es-Mx", {weekday:"long", month:"short", day:"numeric"});
+
 // funcion para agregar tarea
 
 function agregarTarea(tarea, id, realizado, eliminado) {
